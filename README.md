@@ -1,27 +1,21 @@
-# Web
+# EngHaw WEB
+Interface para web para consumir a API sobre Engenheiros do Hawaii / Pouca Vogal / Humberto Gessinger.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+---
+## Configuração do Ambiente
+A configuração do ambiente é feita via `docker` utilizando `docker-compose`.
 
-## Development server
+O `docker` possui os seguintes containers:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- `enghaw-web-node` => Container do Node na versão `12` 
 
-## Code scaffolding
+Para executar todos os containers, utilizar `docker-compose up -d`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
+## Configuração da Aplicação:
+- Executar o comand `npm install`
+- Copiar `.env.example` para `.env`
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+---
+## Servindo a Aplicação
+Caso não tenha alterado a variável `NODE_NG_PORT` no `.env`, basta acessar `http://localhost:4200` que será levado a interface web
