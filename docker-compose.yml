@@ -1,0 +1,18 @@
+version: '3'
+services:
+  node:
+    build: ./docker/node
+    image: enghaw/enghaw-web:node
+    restart: on-failure
+    container_name: enghaw-web-node
+    command: > 
+      bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
+    volumes:
+      - './:/enghaw-web' 
+    ports: 
+      - "${NODE_NG_PORT}:4200"
+    healthcheck:
+      test: ['CMD', 'sh', '-c', 'netstat -an | fgrep 4200 | fgrep -q LISTEN']
+      interval: 10s
+      timeout: 5s
+      retries: 2
